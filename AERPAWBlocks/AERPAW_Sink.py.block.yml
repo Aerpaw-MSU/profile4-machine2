@@ -1,0 +1,56 @@
+id: AERPAW_Sink
+label: AERPAW Sink
+category: '[AERPAW]'
+
+parameters:
+-   id: source
+    label: Source
+    dtype: string
+    default: uhd
+    hide: none
+-   id: samp_rate
+    label: Sample Rate
+    dtype: raw
+    default: 32e3
+    hide: none
+-   id: center_freq
+    label: Center Frequency
+    dtype: real
+    default: 2.6e9
+    hide: none
+-   id: tx_gain
+    label: TX Gain
+    dtype: raw
+    default: '40'
+    hide: none
+-   id: zmq_address
+    label: ZMQ Address
+    dtype: string
+    default: tcp://localhost:5001
+    hide: none
+
+inputs:
+-   label: in
+    dtype: complex
+    vlen: 1
+
+outputs: []
+
+templates:
+    imports: 'from AERPAW_Sink import AERPAW_Sink  # grc-generated hier_block'
+    make: "AERPAW_Sink(\n    center_freq=${ center_freq },\n    samp_rate=${ samp_rate\
+        \ },\n    source=${ source },\n    tx_gain=${ tx_gain },\n    zmq_address=${\
+        \ zmq_address },\n)"
+    callbacks:
+    - set_center_freq(${ center_freq })
+    - set_samp_rate(${ samp_rate })
+    - set_source(${ source })
+    - set_tx_gain(${ tx_gain })
+    - set_zmq_address(${ zmq_address })
+
+documentation: 'keith
+
+    /home/keith/.grc_gnuradio/AERPAW_Sink.py'
+grc_source: /home/keith/workarea/AERPAW_GNURadio/AERPAW_Sink.grc
+
+file_format: 1
