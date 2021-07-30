@@ -166,14 +166,14 @@ class ofdm_rx_b210_tuntap_with_tx(gr.top_block, Qt.QWidget):
             rx_gain=40,
             samp_rate=32e3,
             source='zmq',
-            zmq_address='172.17.0.1:5101',
+            zmq_address='172.17.0.2:5102',
         )
         self.AERPAW_Sink_0 = AERPAW_Sink(
             center_freq=2.6e9,
             samp_rate=32e3,
             source='zmq',
             tx_gain=40,
-            zmq_address='*:5101',
+            zmq_address='*:5102',
         )
 
 
