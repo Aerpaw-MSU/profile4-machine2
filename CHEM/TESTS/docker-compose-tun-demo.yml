@@ -1,0 +1,52 @@
+version: '3'
+services:
+  server:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../:/home/CHEM
+    command: >
+      bash -c "cd /home/CHEM &&
+      python3 zchem.py -t pair --first_port 5001 &
+      sleep 1 &&
+      cd /home/CHEM &&
+      python3 channelSimulator.py -s 2nodes.json &
+      /bin/bash"
+    network_mode: "bridge"
+  node_1:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../../../../../AHN/E-VM/ACN_base_images_config/NetworkLevelEmulationAdaptation/zmq_tun.py:/home/scripts/zmq_tun.py
+    network_mode: "bridge"
+    # Start zmq tun client
+    command: /bin/bash
+    command: >
+      bash -c "cd /home/scripts &&
+      python3 zmq_tun.py -c -i \"172.17.0.2\" -p 5001 -t 10.0.0.2 &
+      /bin/bash"
+    depends_on:
+      - "server"
+      
+  node_2:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../../../../../AHN/E-VM/ACN_base_images_config/NetworkLevelEmulationAdaptation/zmq_tun.py:/home/scripts/zmq_tun.py
+    network_mode: "bridge"
+    command: /bin/bash
+    command: >
+      bash -c "cd /home/scripts &&
+      python3 zmq_tun.py -c -i \"172.17.0.2\" -p 5002 -t 10.0.0.3 &
+      /bin/bash"
+    depends_on:
+      - "node_1"

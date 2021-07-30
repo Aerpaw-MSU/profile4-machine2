@@ -1,0 +1,49 @@
+version: '3'
+services:
+  server:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../:/home/CHEM
+    command: >
+      bash -c "cd /home/CHEM &&
+      python3 zchem.py -t req_rep --addr_prefix 172.17.0. --first_suffix 3 --first_port 5001 &
+      cd /home/CHEM &&
+      sleep 2 &&
+      python3 channelSimulator.py -s 2nodes.json &
+      /bin/bash"
+    network_mode: "bridge"
+  node_1:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../../../../../AHN/E-VM/ACN_base_images_config/NetworkLevelEmulationAdaptation/zmq_tun.py:/home/scripts/zmq_tun.py
+    network_mode: "bridge"
+    # Start zmq tun client
+    command: >
+      bash -c "srsepc &
+      srsenb --rf.device_name=zmq --rf.device_args=\"fail_on_disconnect=true,tx_port=tcp://*:5101,rx_port=tcp://172.17.0.2:5001,id=enb,base_srate=23.04e6\"&
+      /bin/bash"
+    depends_on:
+      - "server"
+      
+  node_2:
+    build: .
+    stdin_open: true
+    tty: true
+    # Needed to create tun/tap interface
+    privileged: true
+    volumes:
+      - ../../../../../AHN/E-VM/ACN_base_images_config/NetworkLevelEmulationAdaptation/zmq_tun.py:/home/scripts/zmq_tun.py
+    network_mode: "bridge"
+    command: >
+      bash -c "srsue --rf.device_name=zmq --rf.device_args=\"tx_port=tcp://*:5102,rx_port=tcp://172.17.0.2:5002,id=ue1,base_srate=23.04e6\"&
+      /bin/bash"
+    depends_on:
+      - "node_1"
