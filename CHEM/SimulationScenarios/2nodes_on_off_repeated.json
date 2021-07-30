@@ -1,0 +1,256 @@
+[
+	{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},{"Channel":
+	 [[0.0, 1.0],
+	  [1.0, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 10
+	},
+	{"Channel":
+	 [[0.0, 0.8],
+	  [0.8, 0.0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0.0, 0.5],
+	  [0.5, 0.0]],
+	 "Description": "Fully connected",
+	 "TimeDelay": 5
+	},
+	{"Channel":
+	 [[0, 2],
+	  [2, 0]],
+	 "Description": "Not connected",
+	 "TimeDelay": 5
+	}
+]

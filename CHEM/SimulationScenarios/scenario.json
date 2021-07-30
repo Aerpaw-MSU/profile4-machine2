@@ -1,0 +1,33 @@
+[
+{
+"Channel":
+ [[0, 1, 1],
+  [1, 0, 1],
+  [1, 1, 0]],
+	"TimeDelay": 20,
+	"Description": "Full configuration"
+},
+{
+"Channel":
+ [[0, 1, 0],
+  [1, 0, 1],
+  [0, 1, 0]],
+	"TimeDelay": 1000000,
+	"Description": "Line configuration"
+},
+{
+"Channel":
+ [[0, 1, 1],
+  [1, 0, 1],
+  [1, 1, 0]],
+	"TimeDelay": 20,
+	"Description": "Full configuration"
+},
+{
+"Channel":
+ [[0, 0, 0],
+  [0, 0, 1],
+  [0, 1, 0]],
+	"Description": "Node 0 disconnected"	
+}
+]
