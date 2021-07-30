@@ -1,0 +1,86 @@
+
+
+
+
+####################################
+###  Channel Matrix Computation  ###
+####################################
+
+channelControl.py
+
+This currently expects GPS Data (MAVlink streams) from exactly 3 UAVs in the local loopback (listening on ports 14563, 14573, and 14583). It needs to be generalized to be useful. It needs the experiment definition available to it to get info from both fixed nodes and mobile nodes.
+
+
+
+###########################
+###  Channel Simulator  ###
+###########################
+
+channelSimulator.py [-s | --scenario <scenario.file>] [-d | --debug level] [-p | --channelSimulatorPort <port number>] [-i | --ipaddress <ipaddress>]
+
+default scenario file is scenario.json, default debug level is info, default port number is 4999, default ipaddress is 127.0.0.1
+
+This is used for debugging the channel emulator, by playing back a sequence of channel matrices (sending them with delays to the channel emulator).
+
+The script can be forcefully stopped by pressing ctrl+c
+
+
+##################################
+### testing Channel Simulator  ###
+##################################
+
+testChannelSimulator.py [-p | --gchemPort <port number>] [-i | --gchemIP <ipaddress>]
+
+default port number is 4999, default ipaddress is 127.0.0.1
+
+This is used for testing the channel simulator, by verifying the data sent by channel simulator is getting received at the same port without any errors 
+
+The script can be forcefully stopped by pressing ctrl+c
+
+
+#########################
+###  Scenario files:  ###
+#########################
+
+The only required field is "Channel". One channel field is necessary for each stage. The "Channel" field specifies the channel matrix, where element C[i][j] specifies the PRR for a transmission from node i to node j.
+
+The optional field "Time Delay" specifies how long the current configuration will be held. If missing, zero or negative, then the current configuration is held until a key is pressed.
+
+The optional field "Description" is a human readable description that gets printed when the scenario is executed
+
+scenario.json is the default configuration file and has an example with three nodes.
+
+Note that the number of nodes may change between stages.
+
+########################
+### Channel emulator ###
+########################
+usage: zchem.py [-h] [-s configFile] [-d] [-t {pair,pub_sub,req_rep}] [-a ADDR_PREFIX] [-f FIRST_SUFFIX] [-p FIRST_PORT]
+
+Optional config file
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s configFile, --scenario configFile
+                        The .json configuration file for the number of clients
+  -d, --debug           Enable debug level for the logger
+  -t {pair,pub_sub,req_rep}, --socket_type {pair,pub_sub,req_rep}
+                        What type of zmq sockets to create
+  -a ADDR_PREFIX, --addr_prefix ADDR_PREFIX
+                        Entire address prefix of containers to connect to. `172.17.0.`
+  -f FIRST_SUFFIX, --first_suffix FIRST_SUFFIX
+                        Address suffix of first container to connect to. Subsequent containers are assumed to have
+                        consecutive suffixes.
+  -p FIRST_PORT, --first_port FIRST_PORT
+                        Port of first container to connect with. Subsequent containers are assumed to use consecutive
+                        ports.
+
+default config file is num_nodes.json. Currently the config file only contains a parameter "N" which corresponds to the number of configured nodes.
+
+dependencies:
+pip3 install zmq
+
+This file configures N tcp ports starting at 5001 and numerically increasing to talk to any number of client nodes and selectively forward received messages based on the channel matrix from channelSimulator.
+In the directory Tests/ there are docker compose files with another README to run a demo of this script's functionality.
+
+The -t/--socket_type argument tells zchem what types of zmq sockets to create. To run zchem with the zmq_tun.py demo you will need to use pair.

@@ -1,0 +1,15 @@
+[
+	{"Type": "UAV",
+	 "Latitude": 35.727267,
+	 "Longitude": -78.696193,
+	 "Altitude": 120,
+	 "LogicalNodeNumber": 1
+	},
+	{"Type": "Fixed",
+	 "Latitude": 35.727451,
+	 "Longitude": -78.695974,
+	 "Altitude": 120,
+	 "LogicalNodeNumber": 2
+	}
+]
+

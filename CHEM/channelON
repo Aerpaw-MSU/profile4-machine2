@@ -1,0 +1,5 @@
+#/bin/bash
+
+export CHEMIP=$1
+
+python channelSimulator.py --scenario 2nodesON.json --ipaddress $CHEMIP
