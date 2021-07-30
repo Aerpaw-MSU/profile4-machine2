@@ -1,0 +1,11 @@
+#!/bin/bash
+
+WORKAREA=/root/Workarea
+
+cd $WORKAREA/InstallScripts
+
+./startCHEM.sh ${1-IQ_EMULATION}
+
+./startChannelControl.sh
+
+

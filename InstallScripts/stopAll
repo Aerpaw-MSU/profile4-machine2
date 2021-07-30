@@ -1,0 +1,10 @@
+#!/bin/bash
+
+WORKAREA=/root/Workarea
+
+cd $WORKAREA/InstallScripts
+
+./stopCHEM.sh
+./stopChannelControl.sh
+
+
