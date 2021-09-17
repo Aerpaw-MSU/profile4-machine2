@@ -1,0 +1,60 @@
+id: AERPAW_Sink
+label: AERPAW Sink
+category: '[AERPAW]'
+
+parameters:
+-   id: args
+    label: Arguments
+    dtype: string
+    default: '""'
+    hide: none
+-   id: center_freq
+    label: Center Frequency
+    dtype: real
+    default: 2.6e9
+    hide: none
+-   id: samp_rate
+    label: Sample Rate
+    dtype: real
+    default: 30.72e6
+    hide: none
+-   id: source
+    label: Source
+    dtype: string
+    default: ZMQ
+    hide: none
+-   id: tx_gain
+    label: TX Gain
+    dtype: raw
+    default: '70'
+    hide: none
+-   id: zmq_tx_address
+    label: ZMQ TX Address
+    dtype: string
+    default: tcp://*:5002
+    hide: none
+
+inputs:
+-   label: in
+    dtype: complex
+    vlen: 1
+
+outputs: []
+
+templates:
+    imports: 'from AERPAW_Sink import AERPAW_Sink  # grc-generated hier_block'
+    make: "AERPAW_Sink(\n    args=${ args },\n    center_freq=${ center_freq },\n\
+        \    samp_rate=${ samp_rate },\n    source=${ source },\n    tx_gain=${ tx_gain\
+        \ },\n    zmq_tx_address=${ zmq_tx_address },\n)"
+    callbacks:
+    - set_args(${ args })
+    - set_center_freq(${ center_freq })
+    - set_samp_rate(${ samp_rate })
+    - set_source(${ source })
+    - set_tx_gain(${ tx_gain })
+    - set_zmq_tx_address(${ zmq_tx_address })
+
+documentation: /home/keith/.grc_gnuradio/AERPAW_Sink.py
+grc_source: /home/keith/workarea/gnuradio/build/untitled.grc
+
+file_format: 1
